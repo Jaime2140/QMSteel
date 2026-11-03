@@ -6,3 +6,6 @@ obj/
 *.db
 *.db-shm
 *.db-wal
+
+# Archivos subidos en desarrollo
+QMSteel.Api/storage/

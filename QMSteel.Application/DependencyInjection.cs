@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using QMSteel.Application.Abstractions;
 using QMSteel.Application.Audits;
+using QMSteel.Application.Bootstrap;
 using QMSteel.Application.Common;
 using QMSteel.Application.Compliance;
 using QMSteel.Application.Dashboard;
@@ -13,6 +14,7 @@ using QMSteel.Application.Personnel;
 using QMSteel.Application.Procedures;
 using QMSteel.Application.Suppliers;
 using QMSteel.Application.Training;
+using QMSteel.Application.Users;
 using QMSteel.Application.Welders;
 
 namespace QMSteel.Application
@@ -43,6 +45,9 @@ namespace QMSteel.Application
             services.AddScoped<QualityObjectiveService>();
             services.AddScoped<DashboardService>();
             services.AddScoped<AlertService>();
+            services.AddScoped<UserService>();
+            services.AddScoped<TenantService>();
+            services.AddScoped<TenantBootstrapper>();
 
             AddDomainEventHandlers(services);
             return services;

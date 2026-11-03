@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using QMSteel.Application.Abstractions;
 using QMSteel.Domain.Repositories;
+using QMSteel.Infrastructure.Files;
 using QMSteel.Infrastructure.Persistence;
 using QMSteel.Infrastructure.Persistence.Repositories;
 
@@ -11,13 +12,15 @@ namespace QMSteel.Infrastructure
     public static class DependencyInjection
     {
         // La API debe registrar su propia implementación de ICurrentUserContext (usuario y tenant del token).
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, DatabaseProvider provider, string connectionString)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, DatabaseProvider provider, string connectionString,
+            string fileStorageRoot = "storage")
         {
             if (string.IsNullOrWhiteSpace(connectionString))
                 throw new ArgumentException("Falta la cadena de conexión 'QMSteel'.", nameof(connectionString));
 
             services.AddDbContext<QMSteelDbContext>(options => options.UseQMSteelDatabase(provider, connectionString));
             services.TryAddSingleton(TimeProvider.System);
+            services.AddScoped<IFileStorage>(sp => new LocalFileStorage(fileStorageRoot, sp.GetRequiredService<ICurrentUserContext>()));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IDomainEventDispatcher, DomainEventDispatcher>();
