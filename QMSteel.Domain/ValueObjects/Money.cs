@@ -16,7 +16,7 @@ namespace QMSteel.Domain.ValueObjects
             if (amount < 0)
                 throw new DomainException("MONEY_NEGATIVE", "El monto no puede ser negativo.");
 
-            Amount = decimal.Round(amount, 2);
+            Amount = decimal.Round(amount, 2, MidpointRounding.AwayFromZero);
             Currency = currency;
         }
 

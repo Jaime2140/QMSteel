@@ -3,4 +3,5 @@
   <Project Path="QMSteel.Application/QMSteel.Application.csproj" />
   <Project Path="QMSteel.Domain/QMSteel.Domain.csproj" />
   <Project Path="QMSteel.Infrastructure/QMSteel.Infrastructure.csproj" />
+  <Project Path="QMSteel.Tests/QMSteel.Tests.csproj" />
 </Solution>
