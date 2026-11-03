@@ -28,7 +28,7 @@ namespace QMSteel.Application.Training
         {
             var plan = await _plans.GetByYearAsync(year, ct);
             return plan is null
-                ? Result.Failure<TrainingPlanDto>(new Error("TRAININGPLAN_NOT_FOUND", $"No hay plan de capacitación para {year}."))
+                ? Result.Failure<TrainingPlanDto>(new Error("TRAININGPLAN_NOT_FOUND", $"No hay plan de capacitación para {year}.", ErrorType.NotFound))
                 : MapPlan(plan);
         }
 

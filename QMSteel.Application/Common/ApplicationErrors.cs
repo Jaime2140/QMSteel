@@ -6,7 +6,7 @@ namespace QMSteel.Application.Common
     public static class ApplicationErrors
     {
         public static Error NotFound<T>(Guid id) =>
-            new($"{typeof(T).Name.ToUpperInvariant()}_NOT_FOUND", $"No se encontró el registro solicitado ({id}).");
+            new($"{typeof(T).Name.ToUpperInvariant()}_NOT_FOUND", $"No se encontró el registro solicitado ({id}).", ErrorType.NotFound);
 
         public static Error Duplicate(string code, string message) => Error.Conflict(code, message);
 
