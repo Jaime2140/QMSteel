@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="QMSteel.Api/QMSteel.Api.csproj" />
+  <Project Path="QMSteel.Application/QMSteel.Application.csproj" />
+  <Project Path="QMSteel.Domain/QMSteel.Domain.csproj" />
+  <Project Path="QMSteel.Infrastructure/QMSteel.Infrastructure.csproj" />
+</Solution>
