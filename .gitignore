@@ -1,3 +1,8 @@
 .vs/
 bin/
 obj/
+
+# Base SQLite local de desarrollo
+*.db
+*.db-shm
+*.db-wal
