@@ -7,17 +7,17 @@ namespace QMSteel.Domain.Entities.Procedures
     // Variables esenciales compartidas por WPS y PQR (AWS D1.1).
     public sealed record EssentialVariables
     {
-        public WeldingProcess Process { get; }
-        public string BaseMetalSpecification { get; }
-        public string BaseMetalGroup { get; }
-        public string FillerClassification { get; }
-        public string? ShieldingGas { get; }
-        public IReadOnlyList<string> Positions { get; }
-        public NumericRange ThicknessMm { get; }
-        public decimal MinPreheatCelsius { get; }
-        public NumericRange Amperage { get; }
-        public NumericRange Voltage { get; }
-        public NumericRange TravelSpeedMmPerMin { get; }
+        public WeldingProcess Process { get; private init; }
+        public string BaseMetalSpecification { get; private init; }
+        public string BaseMetalGroup { get; private init; }
+        public string FillerClassification { get; private init; }
+        public string? ShieldingGas { get; private init; }
+        public IReadOnlyList<string> Positions { get; private init; }
+        public NumericRange ThicknessMm { get; private init; }
+        public decimal MinPreheatCelsius { get; private init; }
+        public NumericRange Amperage { get; private init; }
+        public NumericRange Voltage { get; private init; }
+        public NumericRange TravelSpeedMmPerMin { get; private init; }
 
         private EssentialVariables()
         {

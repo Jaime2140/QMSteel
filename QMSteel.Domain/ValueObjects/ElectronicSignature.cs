@@ -5,10 +5,10 @@ namespace QMSteel.Domain.ValueObjects
     // Firma electrónica: quién firmó, cuándo y con qué significado (elaboró, revisó, aprobó, inspeccionó...).
     public sealed record ElectronicSignature
     {
-        public Guid UserId { get; }
-        public string SignerName { get; }
-        public string Meaning { get; }
-        public DateTime SignedAtUtc { get; }
+        public Guid UserId { get; private init; }
+        public string SignerName { get; private init; }
+        public string Meaning { get; private init; }
+        public DateTime SignedAtUtc { get; private init; }
 
         private ElectronicSignature() { SignerName = default!; Meaning = default!; }
 

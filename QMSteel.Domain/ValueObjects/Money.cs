@@ -6,8 +6,8 @@ namespace QMSteel.Domain.ValueObjects
 
     public sealed record Money
     {
-        public decimal Amount { get; }
-        public Currency Currency { get; }
+        public decimal Amount { get; private init; }
+        public Currency Currency { get; private init; }
 
         private Money() { }
 

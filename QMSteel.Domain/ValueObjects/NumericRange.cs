@@ -4,8 +4,8 @@ namespace QMSteel.Domain.ValueObjects
 {
     public sealed record NumericRange
     {
-        public decimal Min { get; }
-        public decimal Max { get; }
+        public decimal Min { get; private init; }
+        public decimal Max { get; private init; }
 
         private NumericRange() { }
 

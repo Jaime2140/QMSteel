@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\QMSteel.Domain\QMSteel.Domain.csproj" />
+    <ProjectReference Include="..\QMSteel.Infrastructure\QMSteel.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
